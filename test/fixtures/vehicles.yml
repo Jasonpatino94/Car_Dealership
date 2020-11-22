@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: 
+  make: MyString
+  model: MyString
+  kind: MyString
+  customer_id: 1
+  dealership_id: 1
+
+two:
+  year: 
+  make: MyString
+  model: MyString
+  kind: MyString
+  customer_id: 1
+  dealership_id: 1
