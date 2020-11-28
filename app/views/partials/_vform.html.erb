@@ -1,0 +1,6 @@
+<%= form_with model: @vehicle do |f| %>
+Year: <%= f.integer :year %><br>
+Make: <%= f.text_field :make %><br>
+Model <%= f.text_field :model %><br>
+Type: <%= f.text_field :kind %>
+<%end%>

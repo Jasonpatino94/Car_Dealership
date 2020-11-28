@@ -2,7 +2,6 @@ class Dealership < ApplicationRecord
     has_many :vehicles
     has_many :customers, through: :vehicles
 
-    validates :rating, inclusion: { in: %w[1..10],
-    message: "%{value} is not a valid size" }
+    validates :rating, numericality: { greater_than: 0, less_than_or_equal_to: 10 }
 
 end
