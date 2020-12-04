@@ -1,1 +1,16 @@
-<%= @customer.name %>
+<body>
+
+    <h1>Welcome back, 
+    <%= @customer.name %> <br></h1>
+    <br>
+    <br>
+
+    <h3>Would you like to look at your vehicle(s)? <%= link_to  "My vehicles", customer_vehicles_path(@customer) %>
+    <br>
+    <br>
+
+    Find a new car by : <br>
+    <%= link_to  "dealerships", dealerships_path %><br>
+    <%= link_to  "vehicles", vehicles_path %></h3>
+
+</body>

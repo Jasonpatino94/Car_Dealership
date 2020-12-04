@@ -1,0 +1,7 @@
+<h1><%=@dealership.name%></h1><br>
+<br>
+<h2>Type: <%=@dealership.kind%></h2>
+
+<h3> Rating: <%=@dealership.rating%></h3> <br><br>
+
+<%= link_to  "create a new vehicle", new_dealership_vehicle_path(@dealership)%>

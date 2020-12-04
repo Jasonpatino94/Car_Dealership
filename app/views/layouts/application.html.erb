@@ -7,9 +7,31 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <div class= "box-1">
+
+      <%unless if_logged_out%>
+        <ul>
+          <li><%= link_to  "Home", login_path %></li>
+          <li><%= button_to  "Log out", logout_path, {method: :delete}  %></li>
+        </u>
+      <%end%>
+   
+  </div>
   </head>
 
   <body>
     <%= yield %>
+  
   </body>
+  <br>
+  <br>
+
+  <footer>
+  <div class= "box-2">
+  <ul>
+    <li><%= link_to  "See all dealerships", dealerships_path %><br></li>
+    <li><%= link_to  "Are you a dealer? Create a new Dealership!", new_dealership_path %></li>
+
+</footer>
+  
 </html>

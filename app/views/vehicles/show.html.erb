@@ -1,0 +1,16 @@
+<h1>You are on the <%=@vehicle.year%>
+<%=@vehicle.make%>
+<%=@vehicle.model%></h1> 
+ <h2>This is a <%=@vehicle.kind%></h2>
+
+<h2>From: <%=@vehicle.dealership.name%></h2>
+
+<% unless @vehicle.customer%>
+<h3>Would you like to purchase this vehicle? <%= button_to 'purchase', purchase_path(vehicle_id: @vehicle.id), method: 'post'  %> <br> <br>
+
+<%= button_to  "Delete This Vehicle From Dealer", vehicle_path(@vehicle), {method: :delete}  %>
+<%else %>
+<%= link_to  "Edit your vehice", edit_customer_vehicle_path(current_customer, @vehicle) %> /
+<%= button_to  "Delete This", vehicle_path(@vehicle), {method: :delete}  %> </h3>
+
+<%end%>

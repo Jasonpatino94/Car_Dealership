@@ -1,0 +1,51 @@
+<% if params[:customer_id] %>
+    <h1>Hello <%=@customer.name%>!</h1>
+    <h2>This is what is currently in your inventory: </h2>
+
+    
+    <ol>
+<%@vehicles.each do |vehicle| %>
+<li>
+<%= vehicle.year%>, 
+<%= vehicle.make%>, 
+<%= vehicle.model%>, 
+<%=vehicle.kind%>
+<%= link_to  "<--...more", vehicle_path(vehicle)%><br></li>
+<%end%>
+    
+</ol>
+
+<%elsif params[:dealership_id]%>
+    <h1><%=@dealership.name%></h1><br>
+    <h2>Is there any car you would like from us?</h2><br>
+
+<ol>
+<h4><%@vehicles.each do |vehicle| %>
+<li>
+<%= vehicle.year%>, 
+<%= vehicle.make%>, 
+<%= vehicle.model%>, 
+<%=vehicle.kind%>
+<%= link_to  "<--choose this one", vehicle_path(vehicle) %><br></li>
+<%end%>
+</h4>
+</ol>
+
+<%else%>
+
+<h1> All Vehicles for sale! </h1>
+
+<h3>
+    <ul>
+<%@vehicles.each do |vehicle| %>
+<li>
+<%= vehicle.year%>, 
+<%= vehicle.make%>, 
+<%= vehicle.model%>, 
+<%=vehicle.kind%>
+<%= link_to  "<--choose this one", vehicle_path(vehicle) %><br></li>
+<%end%>
+    
+</ul><h3>
+
+<%end%>

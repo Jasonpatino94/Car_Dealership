@@ -1,4 +1,14 @@
-What Dealership would you like to check?
+<h1>What Dealership would you like to check?</h1><br><br>
 
-<% @dealerships.each do |dealer|>
-<%= link_to dealer.name, dealerships_path %>
+
+
+<ul>
+<h3><% @dealerships.each do |dealer|%>
+    <li> 
+        <%= dealer.name %> --
+        <%= link_to "See All Vehicles" , dealership_vehicles_path(dealer) %> / 
+        <%= link_to  "About this Dealership", dealership_path(dealer) %>
+    </li>
+<%end%>
+</h3>
+</ul>

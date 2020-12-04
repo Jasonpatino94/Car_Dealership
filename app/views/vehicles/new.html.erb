@@ -1,0 +1,8 @@
+Create A New Vehicle for <%=@dealership.name%>
+<%= form_with(model: @vehicle, url: dealership_vehicles_path, method: "post") do |f| %>
+Year: <%= f.number_field :year %><br>
+Make: <%= f.text_field :make %><br>
+Model <%= f.text_field :model %><br>
+Type: <%= f.text_field :kind %><br>
+<%=f.submit%>
+<%end%>
