@@ -1,10 +1,11 @@
 <h1>Please Log In!</h1>
-
+<%= flash[:message] if flash[:message] %>
 <%= form_with model: @customer, url: logged_in_path do |f| %>
+   
 Email: <%= f.text_field :email %> <br>
-Password: <%= f.text_field :password %> <br>
+Password: <%= f.password_field :password %> <br>
 <%= f.submit "Submit" %>
 <% end %>
 
-<%= link_to  "If you dont have an account, please Sign Up", new_customer_path %> <br>
+<%= link_to "If you dont have an account, please Sign Up", new_customer_path %> <br>
 <%= link_to "You can also sign in with Google", '/auth/google_oauth2' %> 

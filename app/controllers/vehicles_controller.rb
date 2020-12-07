@@ -23,6 +23,7 @@ class VehiclesController < ApplicationController
     
     def create
         @vehicle = Vehicle.create(vehicle_params)
+        @dealership = Dealership.find_by(id: params[:dealership_id])
         @vehicle.dealership = Dealership.find_by(id: params[:dealership_id])
         if @vehicle.save
             redirect_to vehicle_path(@vehicle)

@@ -7,13 +7,11 @@ module ApplicationHelper
         !!current_customer
       end
 
-      def if_logged_out
-        if !logged_in?
-          redirect "/users/signin"
-        end
+      def logged_out
+          !logged_in?
       end
 
-      def authorized_custeomer?(vehicle)
+      def authorized_customer?(vehicle)
         vehicle.user == current_customer
       end
 end

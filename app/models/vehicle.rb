@@ -3,6 +3,10 @@ class Vehicle < ApplicationRecord
     belongs_to :dealership
 
     validate :cannot_go_past_this_year
+    validates :year, presence: true
+    validates :make, presence: true 
+    validates :model, presence: true
+    
   
     def cannot_go_past_this_year
       if year > Time.current.year + 1

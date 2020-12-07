@@ -12,7 +12,7 @@ class DealershipsController < ApplicationController
     def create
         @dealership = Dealership.create(dealership_params)
         if @dealership.save
-            redirect_to dealership_path
+            redirect_to dealership_path(@dealership)
         else 
             render :new
         end

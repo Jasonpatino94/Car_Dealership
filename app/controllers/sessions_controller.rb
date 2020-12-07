@@ -13,7 +13,8 @@ class SessionsController < ApplicationController
           session[:customer_id] = @customer.id
           redirect_to customer_path(@customer)
         else
-            render :login
+            flash[:message] = "Email or Password is wrong"
+            redirect_to login_path
         end
         
     end

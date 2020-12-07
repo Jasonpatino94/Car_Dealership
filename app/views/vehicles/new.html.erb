@@ -1,5 +1,15 @@
 Create A New Vehicle for <%=@dealership.name%>
-<%= form_with(model: @vehicle, url: dealership_vehicles_path, method: "post") do |f| %>
+<%= form_with model: @vehicle, url: dealership_vehicles_path, method: "post", local: true do |f| %>
+<% if @vehicle.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @vehicle.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 Year: <%= f.number_field :year %><br>
 Make: <%= f.text_field :make %><br>
 Model <%= f.text_field :model %><br>
